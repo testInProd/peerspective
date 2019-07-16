@@ -1,0 +1,15 @@
+.NavBar {
+     margin: 16px;
+     padding: 12px 24px 12px 24px;
+     text-decoration: none;
+     color: #61dafb;
+ }
+
+ .Nav {
+     padding: 16px;
+     alignment: center;
+     position: fixed;
+     top: 0;
+     width: 100%;
+     border-bottom: .1em solid lightGrey;
+ }

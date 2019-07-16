@@ -1,0 +1,11 @@
+.Open-issues-div {
+    border-radius: 45%;
+    text-align: center;
+    color: #61dafb;
+
+}
+
+.Open-issues-list {
+    list-style-type: none;
+    text-align: center;
+}
