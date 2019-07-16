@@ -1,8 +1,13 @@
 .Open-issues-div {
-    border-radius: 45%;
-    text-align: center;
+    border-radius: 12px;
     color: #61dafb;
-
+    background-color: white;
+    border: 0.5rem outset orange;
+    outline-offset: 0.5rem;
+    padding: 8px;
+    margin: 8px;
+    border-width: .5em;
+    font-weight: 600;
 }
 
 .Open-issues-list {

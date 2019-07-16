@@ -10,9 +10,9 @@ export default class OpenIssues extends React.Component {
     render() {
         return (
             <div className="Open-issues-div">
-                <ul className="Open-issues-list">
-                    <li>What do i do about my friend that is on the wrong track?</li>
-                </ul>
+                <div className="Open-issues-list">
+                    What do i do about my friend that is on the wrong track?
+                </div>
             </div>
         )
     }

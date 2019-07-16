@@ -19,8 +19,8 @@ class Question extends React.Component {
 
   render() {
     return (
-        <div >
-          <div>
+        <div className="Question-css">
+          <div className="Question-header">
           Okay, in order to get a perspective,<br/>
           you gotta give one out first.
           </div>
