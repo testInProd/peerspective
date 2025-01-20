@@ -24,5 +24,10 @@ req.onload = function () {
     document.body.style.margin = '0';
     document.body.style.padding = '0';  
 
+    document.body.addEventListener('click', function() {
+        const anchor = document.createElement('a');
+        anchor.href = 'src/main-page.html';
+        anchor.click();    });
+
 };
 req.send();
