@@ -15,4 +15,15 @@ backgroundImage.onload = function() {
     document.body.style.width = '100%';
     document.body.style.margin = '0';
     document.body.style.padding = '0';  
+
+    const button = document.querySelector('.start-button');
+
+if (button) {
+  button.addEventListener('click', () => {
+    window.location.href = 'https://dallascowboys.com';
+  });
+} else {
+  console.error('Element with class "start-button" not found');
+}
+
 };
