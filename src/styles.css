@@ -4,3 +4,46 @@ html {
     -o-background-size: cover;
     background-size: cover;
   }
+
+
+
+#intro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
+header {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Permanent Marker', sans-serif;
+  margin: 0 auto;
+  display: block;
+  margin-top: 30vh;
+  margin-bottom: 10vh;
+  cursor: pointer;
+}
+
+.font-effect-fire {
+  text-shadow: 0 -0.05em 0.2em #FFF, 0.01em -0.02em 0.15em #FE0, 0.01em -0.05em 0.15em #FC0, 0.02em -0.15em 0.2em #F90, 0.04em -0.20em 0.3em #F70, 0.05em -0.25em 0.4em #F70, 0.06em -0.2em 0.9em #F50, 0.1em -0.1em 1.0em #F40;
+  color: #ffe;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+strong {
+  color: #15536a;
+}
