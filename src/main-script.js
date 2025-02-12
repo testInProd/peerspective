@@ -5,30 +5,150 @@ req.open('GET', 'https://api.nasa.gov/planetary/apod?api_key=ylgtDPIaVo0tiEl0ndk
 
 req.onload = function () {
   const data = JSON.parse(this.responseText);
-  const imageUrl = data.hdurl;
+  const imageUrl = data.hdurl == null ? data.url : data.hdurl;
 
-  document.body.style.backgroundImage = `url(${imageUrl})`;
-  document.body.style.backgroundSize = 'contain';
-  document.body.style.backgroundRepeat = 'no-repeat';
-  document.body.style.backgroundPosition = 'center';
-  document.body.style.backgroundColor = 'black';
-  document.body.style.backgroundBlendMode = 'screen';
-  document.documentElement.style.height = '100%';
-  document.documentElement.style.width = '100%';
-  document.body.style.height = '100%';
-  document.body.style.width = '100%';
-  document.body.style.margin = '0';
-  document.body.style.padding = '0';
+
+  if (data.media_type === 'video') {
+    const iframe = document.createElement('iframe');
+    iframe.src = imageUrl + '&autoplay=1&mute=1';
+    iframe.frameBorder = '0';
+    iframe.allowFullScreen = true;
+    iframe.style.position = 'fixed';
+    iframe.style.top = '0';
+    iframe.style.left = '0';
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.style.zIndex = '-1';
+
+    document.body.appendChild(iframe);
+
+    const styles = {
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+      zIndex: -1,
+    };
+
+    // Object.assign(video.style, styles);
+  } else {
+    document.body.style.backgroundImage = `url(${imageUrl}), url(${imageId})`;
+    document.body.style.backgroundSize = 'contain';
+    document.body.style.backgroundRepeat = 'no-repeat';
+    document.body.style.backgroundPosition = 'center';
+    document.body.style.backgroundColor = 'black';
+    document.body.style.backgroundBlendMode = 'screen';
+    document.documentElement.style.height = '100%';
+    document.documentElement.style.width = '100%';
+    document.body.style.height = '100%';
+    document.body.style.width = '100%';
+    document.body.style.margin = '0';
+    document.body.style.padding = '0';
+  }
 
   const button = document.querySelector('.start-button');
 
-if (button) {
-  button.addEventListener('click', () => {
-    window.location.href = 'https://dallascowboys.com';
-  });
-} else {
-  console.error('Element with class "start-button" not found');
-}
+  if (button) {
+    button.addEventListener('click', () => {
+      // Create a popup container
+      const popup = document.createElement('div');
+      popup.style.position = 'fixed';
+      popup.style.top = '50%';
+      popup.style.left = '50%';
+      popup.style.transform = 'translate(-50%, -50%)';
+      popup.style.width = '800px';
+      popup.style.height = '300px';
+      popup.style.background = '#fff';
+      popup.style.border = '1px solid #ddd';
+      popup.style.padding = '20px';
+      popup.style.borderRadius = '10px';
+      popup.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.2)';
+      popup.style.display = 'flex';
+      document.body.appendChild(popup);
+
+      // Create a form to collect product information
+      const form = document.createElement('form');
+      form.style.width = '50%';
+      form.style.padding = '20px';
+      popup.appendChild(form);
+
+      // Create input fields for product information
+      const inputs = [
+        { label: 'Title', name: 'name' },
+        { label: 'Description', name: 'description' },
+        { label: 'Price', name: 'price' },
+      ];
+
+      inputs.forEach((input) => {
+        const label = document.createElement('label');
+        label.textContent = input.label;
+        label.style.display = 'block';
+        label.style.marginBottom = '10px';
+        form.appendChild(label);
+
+        const inputField = document.createElement('input');
+        inputField.type = 'text';
+        inputField.name = input.name;
+        inputField.style.width = '100%';
+        inputField.style.height = '30px';
+        inputField.style.marginBottom = '20px';
+        inputField.style.padding = '10px';
+        inputField.style.border = '1px solid #ccc';
+        form.appendChild(inputField);
+      });
+
+      // Create a submit button
+      const submitButton = document.createElement('button');
+      submitButton.textContent = 'Submit';
+      submitButton.style.width = '100%';
+      submitButton.style.height = '40px';
+      submitButton.style.background = '#4CAF50';
+      submitButton.style.color = '#fff';
+      submitButton.style.padding = '10px';
+      submitButton.style.border = 'none';
+      submitButton.style.borderRadius = '5px';
+      submitButton.style.cursor = 'pointer';
+      form.appendChild(submitButton);
+
+      // Create a baseball card container
+      const card = document.createElement('div');
+      card.style.width = '50%';
+      card.style.padding = '20px';
+      card.style.border = '1px solid #ddd';
+      card.style.borderRadius = '10px';
+      card.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.2)';
+      popup.appendChild(card);
+
+      // Style the card like a baseball card
+      card.innerHTML = `
+      <h2 id="card-name"></h2>
+      <p id="card-description"></p>
+      <p id="card-price"></p>
+      <img src="https://example.com/baseball-card-background.png" alt="Trading Card">
+    `;
+
+      // Update the card with input data
+      form.addEventListener('input', () => {
+        const name = form.querySelector('input[name="name"]').value;
+        const description = form.querySelector('input[name="description"]').value;
+        const price = form.querySelector('input[name="price"]').value;
+
+        card.querySelector('#card-name').textContent = name;
+        card.querySelector('#card-description').textContent = description;
+        card.querySelector('#card-price').textContent = price;
+      });
+
+      // Remove the popup and card when submit is clicked
+      submitButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        popup.remove();
+      });
+    });
+  } else {
+    console.error('Element with class "start-button" not found');
+  }
 
 };
 req.send();
