@@ -119,15 +119,21 @@ req.onload = function () {
       card.style.border = '1px solid #ddd';
       card.style.borderRadius = '10px';
       card.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.2)';
+      card.style.marginLeft = '20px';
       popup.appendChild(card);
+
+      let priceSample = (Math.floor(Math.random() * 100));
 
       // Style the card like a baseball card
       card.innerHTML = `
-      <h2 id="card-name"></h2>
-      <p id="card-description"></p>
-      <p id="card-price"></p>
-      <img src="https://example.com/baseball-card-background.png" alt="Trading Card">
-    `;
+  <h2 id="card-name"></h2>
+  <p id="card-description"></p>
+  <p id="card-price"></p>
+  <div id="image-container" style="width: 100%; height: 200px; padding: 20px; border-radius: 10px; overflow: hidden;">
+  <img id="uploaded-image" style="width: 100%; height: 100%; object-fit: cover;">
+  <input type="file" id="card-image" accept="image/*">
+  </div>
+`;
 
       // Update the card with input data
       form.addEventListener('input', () => {
@@ -138,6 +144,18 @@ req.onload = function () {
         card.querySelector('#card-name').textContent = name;
         card.querySelector('#card-description').textContent = description;
         card.querySelector('#card-price').textContent = price;
+      });
+
+      // Handle image upload
+      const imageInput = card.querySelector('#card-image');
+      imageInput.addEventListener('change', (e) => {
+        const file = imageInput.files[0];
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          const uploadedImage = card.querySelector('#uploaded-image');
+          uploadedImage.src = event.target.result;
+        };
+        reader.readAsDataURL(file);
       });
 
       // Remove the popup and card when submit is clicked

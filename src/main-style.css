@@ -23,7 +23,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -33,6 +33,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: transform 0.2s ease-in-out;
+    transform-origin: center;
+  }
+
+  .start-button:hover {
+    transform: scale(1.2);
+  }
+
+  .start-button:active {
+    transform: scale(1.5);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
   }
 
   main {
