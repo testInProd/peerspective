@@ -31,3 +31,64 @@ req.onload = function () {
 
 };
 req.send();
+
+
+setTimeout(function() {
+  
+    fetch('https://qapi.vercel.app/api/random')
+    .then(response => response.json())
+    .then(data => {
+      const quote = data.quote;
+      const author = data.author;
+  
+      const quoteParagraph = document.createElement('p');
+      quoteParagraph.classList.add('quote-paragraph');
+      quoteParagraph.style.color = 'white';
+      quoteParagraph.style.position = 'absolute';
+      quoteParagraph.style.bottom = '40px';
+      quoteParagraph.style.left = '50%';
+      quoteParagraph.style.transform = 'translateX(-50%)';
+      quoteParagraph.style.textAlign = 'center';
+  
+      const authorParagraph = document.createElement('p');
+      authorParagraph.classList.add('author-paragraph');
+      authorParagraph.style.color = 'white';
+      authorParagraph.style.position = 'absolute';
+      authorParagraph.style.bottom = '10px';
+      authorParagraph.style.left = '50%';
+      authorParagraph.style.transform = 'translateX(-50%)';
+      authorParagraph.style.textAlign = 'center';
+  
+      document.body.appendChild(quoteParagraph);
+      document.body.appendChild(authorParagraph);
+  
+      let quoteIndex = 0;
+      let authorIndex = 0;
+  
+      function typeQuote() {
+        if (quoteIndex < quote.length) {
+          quoteParagraph.textContent += quote[quoteIndex];
+          quoteIndex++;
+          setTimeout(typeQuote, 50); // adjust the speed here
+        } else {
+          setTimeout(typeAuthor,200); // start typing author when quote is done
+        }
+      }
+  
+      function typeAuthor() {
+        if (authorIndex < author.length) {
+          if (authorIndex == 0) {
+            authorParagraph.textContent += '- ';
+          }
+          authorParagraph.textContent += author[authorIndex];
+          authorIndex++;
+          setTimeout(typeAuthor, 50); // adjust the speed here
+        }
+      }
+  
+      typeQuote();
+    })
+    .catch(error => console.error(error));
+
+
+}, 5000);

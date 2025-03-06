@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes');
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
 html {
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 
 
@@ -19,7 +23,6 @@ html {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 
 header {
   font-size: 36px;
@@ -46,4 +49,57 @@ p {
 
 strong {
   color: #15536a;
+}
+
+
+.quote-paragraph {
+  font-size: 18px;
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(70vh);
+}
+
+.author-paragraph {
+  font-size: 16px;
+  font-family: 'Great Vibes', cursive;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(70vh);
+}
+
+
+/* Media queries */
+
+/* For small screens (mobile devices) */
+@media only screen and (max-width: 768px) {
+  .quote-paragraph {
+    font-size: 24px;
+  }
+  .author-paragraph {
+    font-size: 20px;
+  }
+}
+
+/* For medium screens (tablets) */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .quote-paragraph {
+    font-size: 28px;
+  }
+  .author-paragraph {
+    font-size: 24px;
+  }
+}
+
+/* For large screens (desktops) */
+@media only screen and (min-width: 993px) {
+  .quote-paragraph {
+    font-size: 32px;
+  }
+  .author-paragraph {
+    font-size: 28px;
+  }
 }
