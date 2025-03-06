@@ -1,10 +1,17 @@
-html {
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes');
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 
+html {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.start-page {
+  font-size: 28px;
+}
 
 
 #intro {
@@ -19,10 +26,11 @@ html {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+.font-effect-fire {
+  text-shadow: 0 -0.05em 0.2em #FFF, 0.01em -0.02em 0.15em #FE0, 0.01em -0.05em 0.15em #FC0, 0.02em -0.15em 0.2em #F90, 0.04em -0.20em 0.3em #F70, 0.05em -0.25em 0.4em #F70, 0.06em -0.2em 0.9em #F50, 0.1em -0.1em 1.0em #F40;
+  color: #ffe;
+  font-size: 2.75em;
 
-header {
-  font-size: 36px;
   font-weight: bold;
   text-align: center;
   font-family: 'Permanent Marker', sans-serif;
@@ -33,13 +41,8 @@ header {
   cursor: pointer;
 }
 
-.font-effect-fire {
-  text-shadow: 0 -0.05em 0.2em #FFF, 0.01em -0.02em 0.15em #FE0, 0.01em -0.05em 0.15em #FC0, 0.02em -0.15em 0.2em #F90, 0.04em -0.20em 0.3em #F70, 0.05em -0.25em 0.4em #F70, 0.06em -0.2em 0.9em #F50, 0.1em -0.1em 1.0em #F40;
-  color: #ffe;
-}
-
 p {
-  font-size: 18px;
+  font-size: 1em;
   line-height: 1.5;
   margin-bottom: 20px;
 }
@@ -47,3 +50,56 @@ p {
 strong {
   color: #15536a;
 }
+
+
+.quote-paragraph {
+  font-size: 1.5m;
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(70vh);
+}
+
+.author-paragraph {
+  font-size: 1.25em;
+  font-family: 'Great Vibes', cursive;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(70vh);
+}
+
+
+/* Media queries */
+
+/* For small screens (mobile devices) */
+/* @media only screen and (max-width: 768px) {
+  .quote-paragraph {
+    font-size: 24px;
+  }
+  .author-paragraph {
+    font-size: 20px;
+  }
+}
+
+/* For medium screens (tablets) 
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .quote-paragraph {
+    font-size: 28px;
+  }
+  .author-paragraph {
+    font-size: 24px;
+  }
+}
+
+/* For large screens (desktops) 
+@media only screen and (min-width: 993px) {
+  .quote-paragraph {
+    font-size: 32px;
+  }
+  .author-paragraph {
+    font-size: 28px;
+  }
+} */
