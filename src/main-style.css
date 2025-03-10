@@ -82,3 +82,24 @@ body {
   nav a:hover {
     color: blue;
   }
+
+  .popup {
+    max-width: 80%;
+  }
+
+  .form {
+    max-width: 80%;
+  }
+
+  .card {
+    max-width: 80%;
+  }
+
+  #image-container {
+    margin: 10px;
+    width: 100%; /* add this rule */
+    height: 100%; /* add this rule */
+    object-fit: contain; /* add this rule */
+    padding: 20px; 
+    border-radius: 10px;
+  }

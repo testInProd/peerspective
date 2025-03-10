@@ -54,6 +54,7 @@ req.onload = function () {
     button.addEventListener('click', () => {
       // Create a popup container
       const popup = document.createElement('div');
+      popup.classList.add('popup');
       popup.style.position = 'fixed';
       popup.style.top = '50%';
       popup.style.left = '50%';
@@ -70,6 +71,7 @@ req.onload = function () {
 
       // Create a form to collect product information
       const form = document.createElement('form');
+      form.classList.add('form');
       form.style.width = '50%';
       form.style.padding = '20px';
       popup.appendChild(form);
@@ -101,7 +103,7 @@ req.onload = function () {
 
       // Create a submit button
       const submitButton = document.createElement('button');
-      submitButton.textContent = 'Submit';
+      submitButton.textContent = 'Create';
       submitButton.style.width = '100%';
       submitButton.style.height = '40px';
       submitButton.style.background = '#4CAF50';
@@ -114,6 +116,7 @@ req.onload = function () {
 
       // Create a baseball card container
       const card = document.createElement('div');
+      card.classList.add('card');
       card.style.width = '50%';
       card.style.padding = '20px';
       card.style.border = '1px solid #ddd';
@@ -129,8 +132,8 @@ req.onload = function () {
   <h2 id="card-name"></h2>
   <p id="card-description"></p>
   <p id="card-price"></p>
-  <div id="image-container" style="width: 100%; height: 200px; padding: 20px; border-radius: 10px; overflow: hidden;">
-  <img id="uploaded-image" style="width: 100%; height: 100%; object-fit: cover;">
+  <div id="image-container">
+  <img id="uploaded-image" style="width: 80%; height: 80%; object-fit: cover;">
   <input type="file" id="card-image" accept="image/*">
   </div>
 `;
