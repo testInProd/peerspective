@@ -26,7 +26,7 @@ req.onload = function () {
 
     document.body.addEventListener('click', function() {
         const anchor = document.createElement('a');
-        anchor.href = 'src/main-page.html';
+        anchor.href = 'src/create.html';
         anchor.click();    });
 
 };
