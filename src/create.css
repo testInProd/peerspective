@@ -94,9 +94,11 @@ body {
 
   .card {
     max-width: 80%;
+    position: relative;
   }
 
   #image-container {
+    position: absolute;
     margin: 10px;
     width: 100%; /* add this rule */
     height: 100%; /* add this rule */
@@ -104,3 +106,36 @@ body {
     padding: 20px; 
     border-radius: 10px;
   }
+
+  #card-name, #card-description, #card-price {
+    position: absolute;
+    z-index: 1;
+  }
+  
+  #card-name {
+    position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  }
+  
+  #card-description {
+    top: 50px;
+    left: 10px;
+  }
+  
+  #card-price {
+    position: absolute;
+    right: 20%;
+    bottom: 10%;
+    background-color:  rgba(255, 255, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+  }
+

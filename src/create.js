@@ -164,7 +164,34 @@ req.onload = function () {
       // Remove the popup and card when submit is clicked
       submitButton.addEventListener('click', (e) => {
         e.preventDefault();
+        const name = form.querySelector('input[name="name"]').value;
+        const description = form.querySelector('input[name="description"]').value;
+        const price = form.querySelector('input[name="price"]').value;
+        const image = card.querySelector('#uploaded-image').src;
+      
+        // Create a card object
+        const cardData = {
+          name,
+          description,
+          price,
+          image,
+        };
+      
+        // Store the card data in local storage
+        const storedCards = localStorage.getItem('cards');
+        if (storedCards) {
+          const cards = JSON.parse(storedCards);
+          cards.push(cardData);
+          localStorage.setItem('cards', JSON.stringify(cards));
+        } else {
+          localStorage.setItem('cards', JSON.stringify([cardData]));
+        }
+      
+        // Remove the popup
         popup.remove();
+      
+        // Redirect to profile page
+        window.location.href = 'profile.html';
       });
     });
   } else {
