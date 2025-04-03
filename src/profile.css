@@ -27,3 +27,59 @@ header {
   nav a:hover {
     color: blue;
   }
+ 
+/* profile.css */
+
+.card {
+  width: 20em; /* roughly 4 inches wide */
+  height: 30em; /* roughly 6 inches tall */
+  margin: 1em;
+  padding: 0;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-rows: 10% 50% 30% 10%;
+  position: relative;
+}
+
+.card h2 {
+  grid-row: 1;
+  padding: 1em;
+  font-size: 1.5em;
+  margin: 0;
+  text-align: center;
+}
+
+.card img {
+  grid-row: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.card p.description {
+  grid-row: 3;
+  padding: 1em;
+  font-size: 1em;
+  margin: 0;
+  border: 1px solid #ddd;
+  border-radius: 10px; /* Add a slight curve to the corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* Add a subtle shadow */
+  background-color: #f7f7f7; /* Add a light background color */
+  font-family: Arial, sans-serif; /* Use a clean sans-serif font */
+  line-height: 1.5; /* Increase the line height for better readability */
+  max-width: 80%;
+  justify-self: center;
+}
+
+.card p.price {
+  grid-row: 4;
+  position: absolute;
+  right: 20%;
+  bottom: 1em;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0;
+}
